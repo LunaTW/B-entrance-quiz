@@ -14,7 +14,6 @@ public class StudentService {
         this.studentMapper = studentMapper;
     }
 
-
     public List<Student> findAll(){
         return studentMapper.findAll();
     }
