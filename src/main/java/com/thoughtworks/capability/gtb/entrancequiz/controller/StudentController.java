@@ -9,9 +9,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
-@RequestMapping("/students")
+@RequestMapping()
 public class StudentController {
     private final StudentService studentService;
 
@@ -20,16 +21,24 @@ public class StudentController {
     }
 
     @CrossOrigin()
-    @GetMapping()
+    @GetMapping("/students")
     public ResponseEntity<TeamResponse> getAllContacts() {
         List<Student> students = studentService.findAll();
         return ResponseEntity.ok(new TeamResponse(students));
     }
 
-    @PostMapping()
+    @PostMapping("/students")
     public ResponseEntity<HttpStatus> addStudent(StudentRequest request) {
 
         studentService.save(request);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
+
+//    @GetMapping("/groups/random")
+//    public ResponseEntity<Map<String, List<Student>>> RandomGroups() {
+//        return ResponseEntity
+//                .ok( );
+//    }
+
+
 }

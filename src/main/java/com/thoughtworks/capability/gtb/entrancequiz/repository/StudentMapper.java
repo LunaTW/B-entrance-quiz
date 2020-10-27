@@ -4,7 +4,9 @@ import com.thoughtworks.capability.gtb.entrancequiz.model.Student;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public class StudentMapper {
@@ -28,10 +30,36 @@ public class StudentMapper {
         students.add(new Student(15, "蔡文姬"));
     }
 
-    public List<Student> findAll(){
+    public List<Student> findAll() {
         return new ArrayList<>(StudentMapper.students);
     }
 
+    public List<Student> getAllStudent() {
+        return students;
+    }
+
+    private static Map<String, List<Student>> teams = new HashMap<String, List<Student>>() {
+        // To do
+    };
+
+    public Map<String, List<Student>> getTeams() {
+        return teams;
+    }
+
+    public void clearTeams() {
+        teams.values().forEach(list -> {
+            list.clear();
+        });
+    }
+
+    public Student AddToTeam(String teamName, Student student) {
+        if (teams.containsKey(teamName)) {
+            teams.get(teamName).add(student);
+            return student;
+        }
+        return null;
+
+    }
 }
 
 

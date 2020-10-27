@@ -23,6 +23,14 @@ public class StudentService {
         Student student = new Student(100,"New people added");
         // To do here
     }
+
+    public List<Student> getAllStudents() {
+        return studentMapper.getAllStudent();
+    }
+
+
+
+
 }
 
 
