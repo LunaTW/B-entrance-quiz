@@ -1,10 +1,12 @@
 package com.thoughtworks.capability.gtb.entrancequiz.repository;
 
 import com.thoughtworks.capability.gtb.entrancequiz.model.Student;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Repository
 public class StudentMapper {
     public static List<Student> students = new ArrayList<Student>();
 
