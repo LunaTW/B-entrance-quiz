@@ -6,11 +6,13 @@ import com.thoughtworks.capability.gtb.entrancequiz.service.StudentService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 @RestController
+@RequestMapping("/students")
 public class StudentController {
     private final StudentService studentService;
 
@@ -21,7 +23,7 @@ public class StudentController {
     @CrossOrigin()
     @GetMapping()
     public ResponseEntity<TeamResponse> getAllContacts() {
-        List<Student> trainees = studentService.findAll();
-        return ResponseEntity.ok(new TeamResponse(trainees));
+        List<Student> students = studentService.findAll();
+        return ResponseEntity.ok(new TeamResponse(students));
     }
 }
