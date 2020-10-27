@@ -32,10 +32,6 @@ public class StudentMapper {
         return new ArrayList<>(StudentMapper.students);
     }
 
-    public void insert(Student student){
-        StudentMapper.students.add(student);
-        StudentMapper.students.add(new Student(1, "成吉思汗"));
-    }
 }
 
 

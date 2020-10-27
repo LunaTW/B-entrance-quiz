@@ -12,7 +12,7 @@ public class TeamResponse {
         this.students = students.stream().map(StudentResponse::new).collect(Collectors.toList());
     }
 
-    public List<StudentResponse> getTrainees(){
+    public List<StudentResponse> getStudents(){
         return students;
     }
 }
