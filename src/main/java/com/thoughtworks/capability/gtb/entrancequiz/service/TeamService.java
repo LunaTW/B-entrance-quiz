@@ -8,6 +8,7 @@ import com.thoughtworks.capability.gtb.entrancequiz.repository.StudentMapper;
 import java.util.List;
 import java.util.Map;
 
+// TODO GTB-知识点: - 缺少@Service注解
 public class TeamService {
     private final TeamRepository teamRepository;
     private final StudentMapper studentRepository;

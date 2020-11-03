@@ -22,6 +22,7 @@ public class Student {
     }
 
     public void setName(String name) {
+        // TODO GTB-工程实践: - 将变量赋值给自身
         name = name;
     }
 
